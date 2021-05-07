@@ -51,9 +51,15 @@ public class TestSwingApplication extends JFrame {
 		resultTextField.setEditable(false);
 		operationButton = new JButton("sum");
 		operationButton.addActionListener(e -> {
-			int a = Integer.parseInt(numberOneTextField.getText());
-			int b = Integer.parseInt(numberTwoTextField.getText());
-			int c = a + b;resultTextField.setText(String.valueOf(c));
+			try {
+				int a = Integer.parseInt(numberOneTextField.getText());
+				int b = Integer.parseInt(numberTwoTextField.getText());
+				int c = a + b;
+				resultTextField.setText(String.valueOf(c));
+			} catch (NumberFormatException exception) {
+				resultTextField.setText("Insert a valid integer.");
+			}
+			
 		});
 	}
 	
