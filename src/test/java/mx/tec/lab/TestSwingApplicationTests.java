@@ -23,5 +23,20 @@ class TestSwingApplicationTests {
 		String actualResult = application.resultTextField.getText();
 		assertEquals(expectedResult, actualResult);
 	}
+	
+	@Test
+	void givenANonInteger_WhenSum_ThenError() {
+		// Given 5 and 7
+		application.numberOneTextField.setText("abc");
+		application.numberTwoTextField.setText("7");
+		String expectedResult = "Insert a valid integer.";
+		
+		// When operation is sum
+		application.operationButton.doClick();
+		
+		// Then result is 12
+		String actualResult = application.resultTextField.getText();
+		assertEquals(expectedResult, actualResult);
+	}
 
 }

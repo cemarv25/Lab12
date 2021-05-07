@@ -47,7 +47,7 @@ public class TestSwingApplication extends JFrame {
 		resultLabel = new JLabel("Result:", JLabel.CENTER);
 		numberOneTextField = new JTextField(5);
 		numberTwoTextField = new JTextField(5);
-		resultTextField = new JTextField(5);
+		resultTextField = new JTextField(15);
 		resultTextField.setEditable(false);
 		operationButton = new JButton("sum");
 		operationButton.addActionListener(e -> {
